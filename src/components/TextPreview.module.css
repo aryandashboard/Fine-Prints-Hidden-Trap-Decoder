@@ -1,0 +1,171 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* ─── Header ─────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+
+.resetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.resetBtn:hover {
+  color: var(--danger);
+  border-color: var(--danger-border);
+  background: var(--danger-light);
+}
+
+/* ─── Textarea ───────────────────────────────── */
+.textArea {
+  width: 100%;
+  min-height: 300px;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background-color: var(--surface);
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* ─── Progress bar ───────────────────────────── */
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background-color: var(--border);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.charCount {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Alert banner ───────────────────────────── */
+.alert {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  background-color: var(--warning-light);
+  border: 1px solid var(--warning-border);
+  color: var(--warning);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+/* ─── Footer row ─────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.scansNote {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ─── Analyze button ─────────────────────────── */
+.analyzeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.375rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  background: var(--gradient-hero);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: var(--shadow-primary);
+  letter-spacing: 0.01em;
+}
+
+.analyzeBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -4px var(--primary-glow);
+}
+
+.analyzeBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.analyzeBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Inline spinner ─────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

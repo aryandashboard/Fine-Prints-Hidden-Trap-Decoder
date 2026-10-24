@@ -1,0 +1,267 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  animation: slideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Header ─────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 1.3125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* ─── Icon buttons ───────────────────────────── */
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.iconBtn:hover {
+  color: var(--foreground);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+.iconBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  background: var(--gradient-hero);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: var(--shadow-primary);
+}
+
+.iconBtnPrimary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ─── Critical Warning ───────────────────────── */
+.seriousWarning {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--danger) 0%, #b91c1c 100%);
+  color: white;
+  padding: 1rem 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  box-shadow: var(--shadow-danger);
+}
+
+/* ─── Section wrapper ────────────────────────── */
+.section {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.redFlags { background: var(--gradient-danger); border-color: var(--danger-border); }
+.money    { background: var(--gradient-warning); border-color: var(--warning-border); }
+.script   { background: var(--gradient-success); border-color: var(--success-border); }
+
+/* ─── Section title ──────────────────────────── */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  padding: 0.875rem 1.125rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
+}
+
+.redFlags .sectionTitle { color: var(--danger);  border-color: var(--danger-border);  }
+.money    .sectionTitle { color: var(--warning); border-color: var(--warning-border); }
+.script   .sectionTitle { color: var(--success); border-color: var(--success-border); }
+
+.sectionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.07);
+}
+
+/* ─── Lists ──────────────────────────────────── */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1.125rem;
+}
+
+.cardItem {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardItem:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Red flag item ──────────────────────────── */
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.clauseText {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  line-height: 1.45;
+}
+
+.explanation {
+  font-size: 0.8375rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── Risk badge ─────────────────────────────── */
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badgeHigh   { background: var(--danger);  color: white; box-shadow: 0 2px 8px -2px var(--danger-glow); }
+.badgeMedium { background: var(--warning); color: white; }
+.badgeLow    { background: var(--success); color: white; box-shadow: 0 2px 8px -2px var(--success-glow); }
+
+/* ─── Hidden cost item ───────────────────────── */
+.costLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 0.125rem;
+}
+
+.costValue {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+/* ─── Ask script list ────────────────────────── */
+.scriptList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1rem 1.125rem;
+  list-style: none;
+  counter-reset: script-counter;
+}
+
+.scriptItem {
+  counter-increment: script-counter;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.scriptItem::before {
+  content: counter(script-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  background: var(--success);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Empty state ────────────────────────────── */
+.emptyState {
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding: 1rem 1.125rem;
+  font-style: italic;
+}
